@@ -10,4 +10,5 @@ export class SidebareComponent {
   toggleSidebar() {
     this.isExpanded = !this.isExpanded;
   }
+  
 }

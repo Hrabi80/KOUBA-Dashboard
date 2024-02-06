@@ -1,7 +1,69 @@
-<app-navbar id="top"></app-navbar>
-  <div id="side">
-  Side bar
+<app-navbar id="top" [style.left.px]="isExpanded ? 250 : 85"></app-navbar>
+  <div id="side"  [style.width.px]="isExpanded ? 250 : 85">
+      <div class="top-side-bar">
+          <span style="color: #349F8B; font-weight: 500; padding-right: 2px;" *ngIf="isExpanded">#</span>
+          <span *ngIf="isExpanded">KOUBA</span>
+          <span *ngIf="!isExpanded">K</span>
+          <button (click)="toggleSidebar()"  *ngIf="isExpanded"><i class="fa-solid fa-left-long"></i></button>
+          <button (click)="toggleSidebar()" class="expanding-button" *ngIf="!isExpanded"><i class="fa-solid fa-right-long"></i></button>
+      </div>
+      <div class="side-bar-content" *ngIf="isExpanded">
+          <div class="list-container ">
+            <a>Accueil</a>
+            <a> <i class="fa-solid fa-table-cells-large"></i> Tableau de board  &nbsp; &nbsp; &nbsp;<i class="fa-solid fa-circle-info"></i></a>
+            <a> <i class="fa-solid fa-file-circle-exclamation"></i> Barre d'information</a>
+          </div>
+          <hr class="divider">
+
+          <div class="list-container">
+            <a>Gestion</a>
+            <a> <i class="fa-solid fa-bullhorn"></i> Publicités </a>
+            <a> <i class="fa-solid fa-calendar-days"></i> Evènement</a>
+            <a> <i class="fa-solid fa-briefcase"></i> Offre d'emploi</a>
+            <a> <i class="fa-solid fa-hand-holding-heart"></i> Citoyenneté</a>
+            <a> <i class="fa-solid fa-user-group"></i> Utilisateurs</a>
+          </div>
+          <hr class="divider">
+
+
+          <div class="list-container">
+            <a>Paramétre</a>
+            <a> <i class="fa-regular fa-bell"></i> Notification  </a>
+            <a> <i class="fa-solid fa-house-circle-exclamation"></i> Réclamation</a>
+          </div>
+
+          <div class="list-container">
+            <a> <i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnecté  </a>
+          </div>
+      </div>
+
+      <!-- shorter version-->
+      <div class="side-bar-content" *ngIf="!isExpanded">
+        <div class="list-container short-version">
+         
+          <a> <i class="fa-solid fa-table-cells-large"></i></a>
+          <a> <i class="fa-solid fa-file-circle-exclamation"></i></a>
+        </div>
+
+        <div class="list-container short-version">
+          <a> <i class="fa-solid fa-bullhorn"></i> </a>
+          <a> <i class="fa-solid fa-calendar-days"></i> </a>
+          <a> <i class="fa-solid fa-briefcase"></i></a>
+          <a> <i class="fa-solid fa-hand-holding-heart"></i></a>
+          <a> <i class="fa-solid fa-user-group"></i> </a>
+        </div>
+
+
+        <div class="list-container short-version">
+          <a> <i class="fa-regular fa-bell"></i>   </a>
+          <a> <i class="fa-solid fa-house-circle-exclamation"></i> </a>
+        </div>
+
+        <div class="list-container short-version">
+          <a> <i class="fa-solid fa-arrow-right-from-bracket"></i>   </a>
+        </div>
+    </div>
   </div>
-  <router-outlet></router-outlet>
+
 
   
