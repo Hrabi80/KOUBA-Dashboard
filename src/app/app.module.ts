@@ -7,6 +7,7 @@ import { SidebareComponent } from './shared/sidebare/sidebare.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AddInformationComponent } from './features/add-information/add-information.component';
 import { ListInformationComponent } from './features/list-information/list-information.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListInformationComponent } from './features/list-information/list-infor
     SidebareComponent,
     NavbarComponent,
     AddInformationComponent,
-    ListInformationComponent
+    ListInformationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -68,6 +68,8 @@ html, body { margin: 0; padding: 0; }
             padding-left: 25px;
             padding-top: 50px;
             a{
+                text-decoration: none;
+                color:#8E95A2;
                 font-weight: 400;
                 padding-bottom: 27px;
                 cursor: pointer;
@@ -103,3 +105,7 @@ html, body { margin: 0; padding: 0; }
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+.active-link {
+    color: #4EC1B1 !important; /* Ensure this overrides other styles */
+  }
