@@ -35,9 +35,12 @@
               <tr *ngFor="let item of data">
                 <td  style="padding-left: 50px;">{{item.textInFrensh}}</td>
                 <td>{{item.user}}</td>
-                <td>{{item.startDate}}</td>
+                <td class="date">{{item.startDate}}</td>
                 <td class="date">{{item.endDate}}</td>
-                <td class="date">{{item.endDate}}</td>
+                <td>
+                  <button class="btn active-btn" *ngIf="item.status">Actif</button>
+                  <button class="btn blocked-btn" *ngIf="!item.status">Bloquer</button>
+                </td>
                 <td>
                     <button type="button" 
                             class="btn dropdown-toggle" 
