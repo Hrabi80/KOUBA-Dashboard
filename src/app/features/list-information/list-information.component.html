@@ -1,1 +1,61 @@
-<p>list-information works!</p>
+
+    <div class="list-container">
+        <div class="row">
+            <div class="col col-lg-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" placeholder="Recherche par mots clé">
+                    <span class="input-group-text"><i class="fa-solid fa-bars"></i></span>
+                  </div>
+                  
+    
+            </div>
+            <div class="col col-lg-6">
+    
+            </div>
+            <div class="col">
+                <button type="button" class="btn" style="float:right;"> <i class="fa-solid fa-plus"></i> Ajouter une information</button>
+            </div>
+        </div>
+        <span class="search-result">
+            Montrant le résultat pour: 200
+        </span>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" style="padding-left: 50px;">Nom <i class="fa-solid fa-arrow-down-wide-short"></i></th>
+                <th scope="col">Utilisateur <i class="fa-solid fa-arrow-down-wide-short"></i></th>
+                <th scope="col">Date de création <i class="fa-solid fa-arrow-down-wide-short"></i> </th>
+                <th scope="col">Date de fin <i class="fa-solid fa-arrow-down-wide-short"></i> </th>
+                <th scope="col">Statut <i class="fa-solid fa-arrow-down-wide-short"></i> </th>
+                <th scope="col">Action  </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data">
+                <td  style="padding-left: 50px;">{{item.textInFrensh}}</td>
+                <td>{{item.user}}</td>
+                <td>{{item.startDate}}</td>
+                <td class="date">{{item.endDate}}</td>
+                <td class="date">{{item.endDate}}</td>
+                <td>
+                    <button type="button" 
+                            class="btn dropdown-toggle" 
+                            style="background-color: white;color: #0F45FF; font-size: 12; font-weight: 500; border: 1px solid #EDEEF1;"
+                            data-bs-toggle="dropdown"
+                             aria-expanded="false">
+                        Action
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                        <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                      </ul>
+
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+
