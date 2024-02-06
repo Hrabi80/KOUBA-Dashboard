@@ -1,1 +1,65 @@
-<p>add-information works!</p>
+<span class="component-title">Ajouter une information</span>
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="text-input-container">
+            <div class="row">
+                <div class="col col-lg-5">
+                  <label for="textInFrensh" class="form-label">Text en français *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="textInFrensh"
+                    formControlName="textInFrensh"
+                    placeholder="Saisit le text"
+                    (input)="countWords('textInFrensh', 'inputHelp')"
+                  />
+                  <div id="inputHelp" class="form-text" style="float: right;">
+                    {{ form.get('textInFrensh')!.value?.split(' ').length || 0 }}/200 mots
+                  </div>
+                </div>
+                <div class="col col-lg-1"></div>
+                <div class="col col-lg-5">
+                  <label for="textInArabic" class="form-label">Text en arabe *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ادخل النص"
+                    id="textInArabic"
+                    formControlName="textInArabic"
+                    (input)="countWords('textInArabic', 'inputHelpArabic')"
+                  />
+                  <div id="inputHelp" class="form-text">
+                    {{ form.get('textInArabic')!.value?.split(' ').length || 0 }}/200 كلمة
+                  </div>
+                </div>
+              </div>
+              
+            <br><br>
+            <div class="row">
+                <div class="col col-lg-5">
+                    <label for="textInFrensh" class="form-label">Date *</label>
+                    <input 
+                        type="date"
+                        class="form-control"
+                        id="textInFrensh" 
+                        formControlName="startDate"
+                        aria-describedby="inputHelp"
+                        >
+                  </div>
+            </div>
+            <div class="row button-container" >
+                <div class="col col-lg-9"></div>
+                <div class="col">
+                    <button type="submit" class="btn" style="background-color:#349F8B; float: right;">Publier</button>
+                    <button type="button" class="btn btn-outline-secondary" style="margin-right: 15px; float: right;">Rénistialiser</button>
+                    
+                </div>
+                <div class="col col-lg-1"></div>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
